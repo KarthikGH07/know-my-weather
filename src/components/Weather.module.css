@@ -1,0 +1,37 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+.card h2 {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 28px;
+}
+
+.card span {
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--secondary);
+}
+
+.tempWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+}
+
+.tempWrapper h3 {
+  font-size: 56px;
+  line-height: 64px;
+  font-weight: 800;
+}
+
+.tempWrapper img {
+  width: 150px;
+  height: 150px;
+}
