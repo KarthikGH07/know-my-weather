@@ -1,0 +1,25 @@
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 0;
+}
+
+.headingTitle {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  .headingTitle {
+    font-size: 36px;
+    font-weight: bold;
+  }
+}
+
+@media (min-width: 768px) {
+  .headingTitle {
+    font-size: 42px;
+    font-weight: bold;
+  }
+}
