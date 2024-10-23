@@ -5,8 +5,10 @@ import SearchInput from "./components/SearchInput";
 import { BASE_URL } from "./constants";
 import styles from "./App.module.css";
 import type { WeatherResponse } from "./types/weather";
+import useTheme from "./hooks/useTheme";
 
 function App() {
+  const { theme } = useTheme();
   const [weatherData, setWeatherData] = useState<WeatherResponse>();
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -32,6 +34,19 @@ function App() {
       setIsLoading(false);
     }
   }, []);
+
+  useEffect(() => {
+    if (theme === "light") {
+      document.documentElement.classList.remove("dark");
+    } else if (
+      theme === "dark" ||
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+    ) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [theme]);
 
   useEffect(() => {
     getWeather("Bengaluru");
